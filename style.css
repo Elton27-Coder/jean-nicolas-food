@@ -1,0 +1,424 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0;
+    color: #333;
+  }
+  
+  header {
+    background-color: #5e8047;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  header h1 {
+    text-align: center;
+    color: rgb(238, 78, 9);
+    font-size: 55px;
+    margin-top: 3rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    font-size: 15PX;
+    justify-content: center;
+    gap: 15px;
+    margin: 3rem; 
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 15px;
+    
+  }
+  nav ul li a::after{ /* Soulignement animé */
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+    
+  
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #c3d3cf;
+    text-decoration: rgb(1, 1, 1);
+  }
+  
+  .hero button {
+    padding: 10px 10px;
+    background-color: #c0370d;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .hero button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ee8309;
+    color: #f8f8f8;
+    transition: all 0.3s ease;
+
+  }
+  
+  .produits {
+    background-color: #5fab6ee3;
+    padding: 40px 20px;
+    text-align: center;
+  }
+ 
+  
+  .produit {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+  }
+  
+  .produit img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .produit img:hover{
+    background-color: #0be436e3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(230, 144, 8, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .produit button {
+    display: inline-block;
+    background-color: #f04c05;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .produit button:hover{
+    background-color: #0be436e3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .panier {
+    padding: 40px 20px;
+    background-color: #d3e07b;
+    text-align: center;
+  }
+  
+  .galerie {
+    background-color: #48c170;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .galerie-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    
+  }
+  .galerie-images img{
+    width: 20%;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  .galerie-images img:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  .contact {
+    background-color: #62887fb3;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  /* Icônes Réseaux Sociaux */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 25px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: white;
+    background-color: #f1a61a;
+    padding: 10px;
+    border-radius: 60%;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.5);
+  }
+  
+  
+  footer {
+    background-color: #d2c8c8;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 25PX;
+  }
+  
+  .commande {
+    background-color: #ac7575;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  form {
+    background-color: rgb(246, 245, 242);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 55%;
+  }
+  form label{
+    font-size: large;
+    box-sizing: border-box;
+    font-style: normal;
+  }
+  form input{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #592828;
+    
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #877878;
+  }
+  form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #877878;
+  }
+  form input[readonly] {
+    background-color: #f0f0f0;
+  }
+  
+  form button, #telecharger-btn {
+    background-color: #e68e23;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+  }
+  
+  form button, #telecharger-btn:hover{
+    background-color: #c731ec;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+
+  /* Section Menu */
+
+.section-subtitle {
+  text-align: center;
+  font-size: 55px;
+  margin-top: 3rem;
+  color: #30f105;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+  gap: 30px;
+  margin-bottom: 3rem;
+  
+}
+
+.menu-item {
+  background-color: #f3b838cf;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(39, 213, 208, 0.08);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px; /* Hauteur fixe pour les images */
+  object-fit: cover; /* Assure que l'image couvre la zone */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.menu-item img:hover{
+  transform: translateY(-3.2px);
+  transition: all 0.5s ease;
+}
+
+.menu-item h3 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.menu-item h1{
+  font-size: 25px;
+}
+
+.menu-item p {
+  flex-grow: 1; /* Pousse le prix en bas */
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #62615e;
+}
+
+.menu-item .price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-top: auto; /* Colle le prix en bas si flex-grow n'est pas suffisant */
+}
+
+.menu-item button{
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #498484;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.s3 ease, color 0.3s ease;
+}
+.menu-item button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #c340a0;
+  color: #f8f8f8;
+}
+
+
+
+
+/* Styles pour le panier */
+#liste-panier li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.btn-supprimer {
+  background-color: #f04c05;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.btn-supprimer:hover {
+  background-color: #d63031;
+}
+
+.btn-vider {
+  background-color: #e84311;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-vider:hover {
+  background-color: #c0392b;
+}
+
+/* Notification d'ajout au panier */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #5e8047;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+/* Style pour le récapitulatif de commande */
+.recap-commande {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.recap-commande h3 {
+  color: #5e8047;
+  margin-top: 0;
+}
+
+#recap-total {
+  font-weight: bold;
+  font-size: 18px;
+  color: #e84311;
+}
+
+/* Style pour le message de confirmation */
+#confirmation {
+  transition: all 0.3s ease;
+}

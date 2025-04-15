@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jean Nicolas Food</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>🍲🧁Jean Nicolas Food 🥗🧇</h1>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#menu">Menu du Jour</a></li>
+        <li><a href="#commande">Commande</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="accueil" class="hero">
+    <h2>Vous êtes chez Jean Nicolas Food !</h2>
+    <p>🍰 Bienvenue chez Jean Nicolas Food – Pâtisseries & Plats Faits Maison
+      Chez Jean Nicolas Food, la passion de la cuisine se savoure à chaque bouchée. Nous vous proposons une sélection artisanale de pâtisseries délicates et de plats cuisinés maison, préparés avec des ingrédients frais, locaux et de saison.
+      <br><br>
+      ✨ Découvrez notre menu hebdomadaire, laissez-vous tenter par nos créations gourmandes, et commandez en quelques clics grâce à notre système de panier et de formulaire simple et rapide.
+      <br><br>
+      👨‍🍳 Que vous soyez en quête d’un dessert raffiné, d’un repas savoureux pour la semaine ou d’une gourmandise à offrir, nous avons ce qu’il vous faut.
+      <br><br>
+      🧁 Commandez. Savourez. Régalez-vous.
+      🎯 Fait maison avec amour, livré avec soin.</p>
+    <p>Des douceurs faites maison avec amour ♥</p>
+    <button onclick="showMessage()">Touche Moi</button>
+  </section>
+
+  <section id="produits" class="produits">
+    <h2>Nos Pâtisseries</h2>
+    <div class="produit">
+      <img src="./chawarma.jpg" alt="CHAWARMA">
+      <h3>CHAWARMA</h3>
+      <p>...</p>
+      <button onclick="ajouterAuPanier('CHAWARMA', 500 )">Ajouter au panier</button>
+    </div>
+    <div class="produit">
+      <img src="./CAKE 600F.jpg" alt="CAKE">
+      <h3>CAKE</h3>
+      <p>..</p>
+      <button onclick="ajouterAuPanier('CAKE', 600)">Ajouter au panier</button>
+    </div>
+    <div class="produit">
+      <img src="./MINI-PIZZA 10à1000.jpg" alt="MINI-PIZZA">
+      <h3>MINI-PIZZA <br>10 à 2000F</h3>
+      <p>...</p>
+      <button onclick="ajouterAuPanier('MINI-PIZZA', 200)">Ajouter au panier</button>
+    </div>
+    <div class="produit">
+      <img src="./ROULETTE DE SAUCISSE 10à1000F.jpg" alt="ROULETTE DE SAUCISSE">
+      <h3>ROULETTE DE SAUCISSE <br> 10 à 1000F</h3>
+      <p>...</p>
+      <button onclick="ajouterAuPanier('ROULETTE DE SAUCISSE', 100)">Ajouter au panier</button>
+    </div>
+    <div class="produit">
+      <img src="./ICE PASTELS 100F.jpg" alt="ICE PASTELS">
+      <h3>ICE PASTELS</h3>
+      <p>...</p>
+      <button onclick="ajouterAuPanier('ICE PASTELS', 100)">Ajouter au panier</button>
+    </div>
+    <div class="produit">
+      <img src="./GATEAU D'ANNIF 5000F.jpg" alt="GATEAU D'ANNIVERSAIRE">
+      <h3>GATEAU D'ANNIVERSAIRE</h3>
+      <p>...</p>
+      <button onclick="ajouterAuPanier('GATEAU D ANNIVERSAIRE', 5000)">Ajouter au panier</button>
+    </div>
+    <div class="produit">
+      <img src="./GATEAU D'ANNIF AU CHOCOLAT 9000F.jpg" alt="GATEAU D'ANNIVERSAIRE AU CHOCOLAT">
+      <h3>GATEAU D'ANNIVERSAIRE AU CHOCOLAT</h3>
+      <p>...</p>
+      <button onclick="ajouterAuPanier('GATEAU DANNIVERSAIRE AU CHOCOLAT', 9000)">Ajouter au panier</button>
+    </div>
+    <div class="produit">
+      <img src="./GATEAU D'ANNIF A LA CREME CHANTILLY 8000F.jpg" alt="GATEAU D'ANNIVERSAIRE A LA CREME CHANTILL">
+      <h3>GATEAU D'ANNIVERSAIRE A LA CREME CHANTILLY</h3>
+      <p>...</p>
+      <button onclick="ajouterAuPanier('GATEAU D ANNIVERSAIRE A LA CREME CHANTILLY', 8000)">Ajouter au panier</button>
+    </div>
+  </section>
+
+  <section id="panier" class="panier">
+    <h2>🛒 Votre Panier</h2>
+    <ul id="liste-panier"></ul>
+    <p><strong>Total :</strong> <span id="total-panier">0</span> </p>
+  </section>
+
+  <section id="galerie" class="galerie">
+    <h2>Galerie Photo</h2>
+    <div class="galerie-images">
+      <img src="./GALERI1.jpg" alt="photo 1">
+      <img src="./chawarma.jpg" alt="photo 2">
+      <img src="./GALERI2.jpg" alt="photo 3">
+      <img src="./GALERI4.jpg" alt="photo 4">
+    </div>
+  </section>
+
+
+  <!-- Section Menu -->
+  <section id="menu" class="section section-alt">
+    <div class="container">
+        <h2></h2>
+        <p class="section-subtitle">LE MENU</p>
+
+        <div class="menu-grid">
+            <article class="menu-item">
+                <img src="./LUNDI.jpg" alt="Description du plat 1">
+                <h1>MENU DU LUNDI</h1>
+                <li><h3>Piron rouge avec aileron</h3> <span class="price">2000 f cfa</span></li>
+                <li><h3>Pâte rouge avec poulet</h3> <span class="price">2000 f cfa</span></li>
+                <p>...</p>
+                <span class="price"></span><br>
+                <button onclick="ajouterAuPanier('Piron rouge avec aileron', 2000)">Piron rouge avec aileron</button><br>
+                <button onclick="ajouterAuPanier('Pâte rouge avec poulet', 2000)">Pâte rouge avec poulet</button><br>
+            </article>
+
+            <article class="menu-item">
+                <img src="./MARDI.jpg" alt="Description du plat 2">
+                <img src="./MARDI2.jpg" alt="Description du plat 2">
+                <h1>MENU DU MARDI</h1>
+                <li><h3>Atassi enrichi</h3> <span class="price"> 1500 f cfa & 2000 f cfa</span></li>
+                <li><h3>Riz au spaguetti + aileron</h3> <span class="price"> 1500 f cfa 2000 f cfa</span></li>
+                <p>...</p>
+                <span class="price"></span><br>
+                <button onclick="ajouterAuPanier('Atassi enrichi', 1500)">Atassi enrichi 1</button><br>
+                <button onclick="ajouterAuPanier('Atassi enrichi', 2000 )">Atassi enrichi 2</button><br>
+                <button onclick="ajouterAuPanier('Riz au spaguetti + aileron', 1500)">Riz au spaguetti + aileron 1</button><br>
+                <button onclick="ajouterAuPanier('Riz au spaguetti + aileron', 2000)">Riz au spaguetti + aileron 2</button><br>
+            </article>
+
+            <article class="menu-item">
+                <img src="./MERCREDI.jpg" alt="Description du plat 3">
+                <h1>MENU DU MERCREDI</h1>
+                <li><h3>Télibo + Gboman enbrichi</h3><span class="price">2000 f cfa</span></li><br>
+                <li><h3>Télibo + Gboman enrichi</h3><span class="price">2000 f cfa</span></li><br>
+                <p>...</p>
+                <span class="price"></span><br>
+                <button onclick="ajouterAuPanier('Télibo + Gboman enbrichi', 2000)">Télibo + Gboman enbrichi</button><br>
+                <button onclick="ajouterAuPanier('Télibo + Gboman enrichi', 2000)">Télibo + Gboman enrichi</button><br>
+            </article>
+            <article class="menu-item">
+              <img src="./JEUDI.jpg" alt="Description du plat 3">
+              <h1>MENU DU JEUDI</h1>
+              <li><h3>Salade composé</h3><span class="price">1500 f cfa</span></li>
+              <li><h3>Hors d'œuvre chaud</h3><span class="price">2000 f cfa</span></li>
+              <p>...</p>
+              <span class="price"></span><br>
+              <button onclick="ajouterAuPanier('Salade composé', 1500)">Salade composé</button><br>
+              <button onclick="ajouterAuPanier('Hors d œuvre chaud', 2000)">Hors d'œuvre chaud</button><br>
+          </article>
+          <article class="menu-item">
+            <img src="./VENDREDI.jpg" alt="Description du plat 3">
+            <h1>MENU DU VENDREDI</h1>
+            <li><h3>Atiéké + poisson braisé</h3><span class="price">1500 f cfa</span></li>
+            <li><h3>Atiéké + aileron braisé</h3><span class="price">2000 f cfa</span></li>
+            <p>...</p>
+            <span class="price"></span><br>
+            <button onclick="ajouterAuPanier('Atiéké + poisson braisé', 1500)">Atiéké + poisson braisé</button><br>
+            <button onclick="ajouterAuPanier('Atiéké + aileron braisé', 2000)">Atiéké + aileron braisé</button><br>
+        </article>
+          <article class="menu-item">
+            <img src="./SAMEDI.jpg" alt="Description du plat 3">
+            <h1>MENU DU SAMEDI</h1>
+            <li><h3>Atassi du chef</h3><span class="price">2000 f cfa</span></li>
+            <li><h3>Aileron + frites</h3><span class="price">2000 f cfa</span></li>
+            <p>...</p>
+            <span class="price"></span><br>
+            <button onclick="ajouterAuPanier('Atassi du chef', 2000)">Atassi du chef</button><br>
+            <button onclick="ajouterAuPanier('Aileron + frites', 2000)">Aileron + frites</button><br>
+        </article>
+        <article class="menu-item">
+          <img src="./DIMANCHE.jpg" alt="Description du plat 3">
+          <h1>MENU DU DIMANCHE</h1>
+          <li><h3>Indomi enrichi</h3><span class="price">1500 f cfa</span></li>
+          <li><h3>Aloco aux œufs</h3><span class="price">1500 f cfa</span></li>
+          <p>...</p>
+          <span class="price"></span><br>
+          <button onclick="ajouterAuPanier('Indomi enrichi', 1500)">Indomi enrichi</button><br>
+          <button onclick="ajouterAuPanier('Aloco aux œufs', 1500)">Aloco aux œufs</button><br>
+      </article>
+    </div>
+  </section>
+
+
+  <section id="commande" class="commande">
+    <h2>Passer une commande</h2>
+    <form id="formulaire-commande">
+      <label>Nom & Prenom :</label>
+      <input type="text" name="nom & prenom" required><br/>
+  
+      <label>Email :</label>
+      <input type="email" name="email" required><br/>
+
+      <label for="phone">Téléphone :</label>
+      <input type="tel" id="phone" name="phone" required>
+  
+      <label>Adresse de livraison :</label>
+      <input type="text" name="adresse" required><br/>
+
+      <label for="date">Jour du livraison :</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Heure de livraison :</label>
+      <input type="time" id="time" name="time" required>
+  
+      <label>Produit souhaité :</label>
+      <select name="produit" id="produit" required>
+        <option value="">-- Choisir un produit --</option>
+        <option value="CHAWARMA" data-prix="500">CHAWARMA - 500 f </option>
+        <option value="CAKE" data-prix="600">CAKE - 600 f</option>
+        <option value="MINI-PIZZA" data-prix="200">MINI-PIZZA - 200 f </option>
+        <option value="ROULETTE DE SAUCISSE" data-prix="100">ROULETTE DE SAUCISSE - 100 f</option>
+        <option value="ICE PASTELS" data-prix="1000">ICE PASTELS - 100 f </option>
+        <option value="GATEAU D'ANNIVERSAIRE" data-prix="5000">GATEAU D'ANNIVERSAIRE- 5000 f</option>
+        <option value="GATEAU D'ANNIVERSAIRE AU CHOCOLAT" data-prix="9000">GATEAU D'ANNIVERSAIRE AU CHOCOLAT - 9000 f</option>
+        <option value="GATEAU D'ANNIVERSAIRE A LA CREME CHANTILLY" data-prix="8000">GATEAU D'ANNIVERSAIRE A LA CREME CHANTILLY - 8000 f</option>
+      </select><br/>
+
+
+      <label for="menu-select">Choisir un menu:</label>
+      <select id="menu" name="menu">
+        <option value="">-- Sélectionnez un plat --</option>
+        <option value="piron-rouge-aileron" data-prix="2000">Piron rouge avec aileron - 2000 f</option>
+        <option value="pate-rouge-poulet" data-prix="2000">Pâte rouge avec poulet - 2000 f</option>
+        <option value="atassi-enrichi-1500" data-prix="1500">Atassi enrichi - 1500 f</option>
+        <option value="atassi-enrichi-2000" data-prix="2000">Atassi enrichi - 2000 f</option>
+        <option value="riz-spaguetti-aileron-1500" data-prix="1500">Riz au spaguetti + aileron - 1500 f</option>
+        <option value="riz-spaguetti-aileron-2000" data-prix="2000">Riz au spaguetti + aileron - 2000 f</option>
+        <option value="telibo-gboman-enbrichi" data-prix="2000">Télibo + Gboman enbrichi - 2000 f</option>
+        <option value="telibo-gboman-enrichi" data-prix="2000">Télibo + Gboman enrichi - 2000 f</option>
+        <option value="salade-compose" data-prix="1500">Salade composé - 1500 f</option>
+        <option value="hors-oeuvre-chaud" data-prix="2000">Hors d'œuvre chaud - 2000 f</option>
+        <option value="atieke-poisson" data-prix="1500">Atiéké + poisson braisé - 1500 f</option>
+        <option value="atieke-aileron" data-prix="2000">Atiéké + aileron braisé - 2000 f</option>
+        <option value="atassi-chef" data-prix="2000">Atassi du chef - 2000 f</option>
+        <option value="aileron-frites" data-prix="2000">Aileron + frites - 2000 f</option>
+        <option value="indomi-enrichi" data-prix="1500">Indomi enrichi - 1500 f</option>
+        <option value="aloco-oeufs" data-prix="1500">Aloco aux œufs - 1500 f</option>
+    </select><br/>
+  
+      <label>Quantité pour produit :</label>
+      <input type="number" name="quantite_produit" id="quantite-produit" min="1" value="1" required><br/>
+
+      <label>Quantité pour menu :</label>
+      <input type="number" name="quantite_menu" id="quantite-menu" min="1" value="1" required><br/>
+
+      <label>Message :</label><br/>
+      <textarea name="message" rows="4"></textarea><br/>
+  
+      
+      <button type="button" id="telecharger-btn">Télécharger la commande en PDF</button>
+
+    </form>
+    <p id="confirmation"></p>
+  
+    <div id="recap-image-container" style="margin-top: 20px;"></div>
+  </section>
+
+  
+  
+  
+
+  <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Suivez-nous ou contactez-nous :</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/eltonhounnou/" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://cbl.link/9BpoSCo " target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </section>
+
+  <footer>
+    <p>© 2025 N. E. Roanld Bill Hounnou / Tous droits réservés.</p>
+    <p>REB-CODEUR</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
